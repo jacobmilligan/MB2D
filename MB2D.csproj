@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{937A4F5D-E7ED-47F7-AEA2-5EC4AE842543}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>MB2D</RootNamespace>
+    <AssemblyName>MB2D</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MonoGame.Extended, Version=0.6.377.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\MonoGame.Extended.0.6.377\lib\MonoGame.Extended.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="MonoGame.Framework">
+      <HintPath>..\packages\MonoGame.Framework.Portable.3.6.0.1625\lib\portable-net45+win8+wpa81\MonoGame.Framework.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\Audio\SoundTrigger.cs" />
+    <Compile Include="src\Collision\CollisionCell.cs" />
+    <Compile Include="src\Collision\CollisionMap.cs" />
+    <Compile Include="src\EntityComponent\Components\CollisionComponent.cs" />
+    <Compile Include="src\EntityComponent\Components\Depth.cs" />
+    <Compile Include="src\EntityComponent\Components\Inventory.cs" />
+    <Compile Include="src\EntityComponent\Components\Movement.cs" />
+    <Compile Include="src\EntityComponent\Components\PhysicsComponent.cs" />
+    <Compile Include="src\EntityComponent\Components\PlayerController.cs" />
+    <Compile Include="src\EntityComponent\Components\SpriteTransform.cs" />
+    <Compile Include="src\EntityComponent\Components\UtilityController.cs" />
+    <Compile Include="src\EntityComponent\Entity.cs" />
+    <Compile Include="src\EntityComponent\EntityMap.cs" />
+    <Compile Include="src\EntityComponent\EntitySystem.cs" />
+    <Compile Include="src\EntityComponent\IComponent.cs" />
+    <Compile Include="src\EntityComponent\Systems\CollisionSystem.cs" />
+    <Compile Include="src\EntityComponent\Systems\DepthSystem.cs" />
+    <Compile Include="src\EntityComponent\Systems\InputSystem.cs" />
+    <Compile Include="src\EntityComponent\Systems\MovementSystem.cs" />
+    <Compile Include="src\EntityComponent\Systems\PhysicsSystem.cs" />
+    <Compile Include="src\EntityComponent\Systems\RenderSystem.cs" />
+    <Compile Include="src\Geometry\Grid.cs" />
+    <Compile Include="src\Geometry\Line.cs" />
+    <Compile Include="src\Input\Command.cs" />
+    <Compile Include="src\Input\ConsoleCommand.cs" />
+    <Compile Include="src\Input\InputMap.cs" />
+    <Compile Include="src\Input\IOUtil.cs" />
+    <Compile Include="src\Input\MoveCommands.cs" />
+    <Compile Include="src\Input\TextInputHandler.cs" />
+    <Compile Include="src\Inventory\Collectable.cs" />
+    <Compile Include="src\MBConsole\MBConsole.cs" />
+    <Compile Include="src\MBConsole\MBConsoleAST.cs" />
+    <Compile Include="src\MBConsole\MBConsoleLexer.cs" />
+    <Compile Include="src\MBConsole\MBConsoleParser.cs" />
+    <Compile Include="src\MBGame.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="src\MBMath.cs" />
+    <Compile Include="src\MonogameExtensions\SpriteBatchExtensions.cs" />
+    <Compile Include="src\MonogameExtensions\Vector2Extensions.cs" />
+    <Compile Include="src\Scene\Scene.cs" />
+    <Compile Include="src\Scene\SceneStack.cs" />
+    <Compile Include="src\Test\CollisionRenderSystem.cs" />
+    <Compile Include="src\Test\EntityContainerTests.cs" />
+    <Compile Include="src\Test\TestSystem.cs" />
+    <Compile Include="src\Test\UITest.cs" />
+    <Compile Include="src\Tiles\Tile.cs" />
+    <Compile Include="src\Tiles\TileMap.cs" />
+    <Compile Include="src\UI\Button.cs" />
+    <Compile Include="src\UI\Label.cs" />
+    <Compile Include="src\UI\Layout.cs" />
+    <Compile Include="src\UI\ListControl.cs" />
+    <Compile Include="src\UI\UIControlElement.cs" />
+    <Compile Include="src\UI\UIData.cs" />
+    <Compile Include="src\UI\UIElement.cs" />
+    <Compile Include="src\UI\UIView.cs" />
+    <Compile Include="src\Test\TestUIView.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
